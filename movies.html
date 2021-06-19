@@ -1,0 +1,926 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dark Horse</title>
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css" />
+
+     <link href="icon.css" rel="stylesheet">
+
+      <link href="css/gallery.css" rel="stylesheet">
+
+
+
+
+
+
+   <link href='https://fonts.googleapis.com/css?family=Play:400,700' rel='stylesheet' type='text/css'>
+
+
+   <link href="C:\Users\justin.ross\Desktop\good one\flix-movie-homepage-main\font-awesome\css\font-awesome.min.css" rel="stylesheet" type="text/css">
+   <!-- Loading main css file -->
+
+   <!-- Default snippet for navigation -->
+   <script src="js/jquery-1.11.1.min.js"></script>
+   <script src="js/plugins.js"></script>
+   <script src="js/app.js"></script>
+
+
+
+   <link rel="stylesheet" href="C:\Users\justin.ross\Desktop\good one\flix-movie-homepage-main\css\cin.css">
+   <!--[if lt IE 9]>
+ <script src="js/ie-support/html5.js"></script>
+ <script src="js/ie-support/respond.js"></script>
+ <![endif]-->
+    <!-- https://www.qdfuns.com/notes/37060/dfeb26a836c734f4fc0dd872d7e60663.html -->
+
+
+
+
+
+    <script>
+        window.onload = function () {
+            var canv = document.getElementById('canvas'),
+                dd = document.documentElement, cw = dd.clientWidth, ch = dd.clientHeight;;
+                cw = dd.clientWidth, ch = dd.clientHeight;
+            canv.width = cw, canv.height = ch;
+            var bc = 120;
+            var bcIndex = 5;
+            var shadowBlur = 2;
+            var sbIndex = 0.4;
+            var fh = 110;
+            var fontSize = 12;
+            var ctx = canv.getContext('2d');
+            var columns = Math.ceil(cw / fontSize);
+            var arr = [];
+            var texts = "`~!@#$%^&*()-_=+[]{}\\|;:\'\",.<>/?0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
+            //字符源: `~!@#$%^&*()-_=+[]{}\|;:'",.<>/?0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ
+            for (var i = 0; i < columns; i++) {
+                arr[i] = 1;
+            }
+
+            function run() {
+                ctx.fillStyle = "rgba(0,0,0,0.08)";
+                ctx.fillRect(0, 0, cw, ch);
+                ctx.fillStyle = "#12ee46";
+                ctx.font = fontSize + "px Arial";
+                ctx.textAlign = 'center';
+                ctx.textBaseline = 'middle';
+                for (var i = 0; i < arr.length; i++) {
+                    var text = texts[Math.floor(Math.random() * texts.length)];
+                    ctx.fillText(text, i * fontSize, arr[i] * fontSize);
+                    if (arr[i] * fontSize > ch || Math.random() > 0.95) {
+                        arr[i] = 0;
+                    }
+                    arr[i]++;
+                }
+                drawText();
+                window.onresize = function () {
+                    columns = Math.ceil(cw / fontSize);
+                    arr=[];
+                    for (var i = 0; i < columns; i++) {
+                        arr[i] = 1;
+                    }
+                }
+            }
+            function drawText() {
+                ctx.save();
+                var title = "Dark Horse";
+                var title2 = "VIP Movie Lounge";
+                ctx.fillStyle = "rgba(0,24,0,1)";
+                ctx.font = fh + "px Arial";
+                ctx.textAlign = 'center';
+                ctx.textBaseline = 'middle';
+                ctx.fontWeight = 900;
+                ctx.shadowOffsetY = 0;
+
+
+                shadowBlur += sbIndex;
+                ctx.shadowBlur = shadowBlur;
+                if (shadowBlur >= 14) {
+                    sbIndex *= -1
+                } else if (shadowBlur <= 0) {
+                    sbIndex *= -1;
+                }
+
+                bc += bcIndex;
+                ctx.shadowColor = 'rgba(0,' + bc + ',0,1)';
+                if (bc >= 255) {
+                    bcIndex *= -1;
+                } else if (bc <= 115) {
+                    bcIndex *= -1;
+                }
+                ctx.fillText(title, cw / 2, ch / 2-55);
+                ctx.font = 80 + "px Arial";
+                ctx.fillText(title2, cw / 2, ch / 2+45);
+                ctx.restore();
+            }
+            setInterval(run, 90);
+        }
+    </script>
+</head>
+
+
+<body>
+<section>
+  <div class="SideBar">
+         <ul>
+             <li>
+                 <a href="index.html">
+                     <span class="icon"> <i class="fa fa-home"  style="font-size:20px;" aria-hidden="true"></i> </span>
+                     <span class="title">Home</span>
+                 </a>
+             </li>
+             <li>
+                 <a href="#">
+                     <span class="icon"><i class="fa fa-video-camera" style="font-size:20px;" aria-hidden="true"></i></span>
+                     <span class="title">Music Videos</span>
+                 </a>
+             </li>
+             <li>
+                 <a href="#">
+                     <span class="icon"><i class="fa fa-music" style="font-size:20px;"  aria-hidden="true"></i></span>
+                     <span class="title">Music Audio</span>
+                 </a>
+             </li>
+             <li>
+                 <a href="#">
+                     <span class="icon"><i class="fa fa-code" style="font-size:20px;" aria-hidden="true"></i></span>
+                     <span class="title">HTML</span>
+                 </a>
+             </li>
+             <li>
+                 <a href="#">
+                     <span class="icon"><i class="fa fa-code-fork"  style="font-size:20px;" aria-hidden="true"></i></span>
+                     <span class="title">JS</span>
+                 </a>
+             </li>
+             <li>
+                 <a href="#">
+                     <span class="icon"><i class="fa fa-rocket" style="font-size:20px;" aria-hidden="true"></i></span>
+                     <span class="title">G-Hub</span>
+                 </a>
+             </li>
+             <li>
+                 <a href="#">
+                     <span class="icon"><i class="fa fa-hacker-news" style="font-size:20px;" aria-hidden="true"></i></span>
+                     <span class="title" title="Hacker News">H-News</span>
+                 </a>
+             </li>
+         </ul>
+     </div>
+     <div class="toggle" onclick="toggleMenu()">
+
+     </div>
+ </section>
+
+
+<script type="text/javascript">
+ function toggleMenu() {
+     let navigation = document.querySelector('.SideBar');
+     let toggle = document.querySelector('.toggle');
+     navigation.classList.toggle('active');
+     toggle.classList.toggle('active');
+ }
+</script>
+</section>
+
+
+    <canvas id="canvas"></canvas>
+
+
+<div class="container">
+
+<div class="page-header">
+    <center style="font-size:40px; color:red;"><big>Malignant Movie Lounge</big></center>
+
+
+
+
+
+    <form id="search-form" href="#test1" class="smoothscroll">
+      <input type="text" id="searchText"/>
+      <input type="button" value="Search" id="searchButton"/>
+  </form>
+
+  <script>
+  $(document).ready(function () {
+    $( "#searchButton" ).click(function() {
+
+    var text = $('#searchText').val().toLowerCase();
+
+
+    $( "html, body" ).animate({
+        scrollTop: ($('#'+text).offset().top)
+
+    }, 2000);
+    });
+});
+
+
+  </script>
+
+</div>
+
+</div>
+
+
+
+<div class="container">
+<h1 style="padding-left:420px;">Highly Rated</h1>
+  <div class="gallery">
+
+    <a class="gallery-item" href=""><img   id='witch'   src="dummy/witch.jpg" alt="witch"  style="width:330px;height:380px;" ><span class="text-wrapper"><span class="name">The Witch
+    </span><p>(2015)</p><span class="title">90% Rotten Tomatoes 7.4/10 IMDb 83% Metacritic</span></span></a>
+
+    <a class="gallery-item" href="#"><img id="annihilation" src="dummy/annihilation.jpg" alt="Annihilation" style="width:330px;height:380px;" ><span class="text-wrapper"><span class="name">Annihilation
+    </span><p>(2018)</p><span class="title">88% Rotten Tomatoes 6.8/10 IMDb 79% Metacritic</span></span></a>
+
+    <a class="gallery-item" href="#"><img src="http://placeimg.com/330/265" alt="Headshot of Thomas Jefferson" style="width:330px;height:380px;" ><span class="text-wrapper"><span class="name">Thomas Jefferson</span><span class="title">Chief Operating Officer</span></span></a>
+
+    <a class="gallery-item" href="#"><img src="http://placeimg.com/330/265" alt="Headshot of James Madison" style="width:330px;height:380px;" ><span class="text-wrapper"><span class="name">James Madison</span><span class="title">Developer</span></span></a>
+
+    <a class="gallery-item" href="#"><img src="http://placeimg.com/330/265" alt="Headshot of James Monroe" style="width:330px;height:380px;" ><span class="text-wrapper"><span class="name">James Monroe</span><span class="title">Developer</span></span></a>
+
+    <a class="gallery-item" href="#"><img src="http://placeimg.com/330/265" alt="Headshot of Andrew Jackson" style="width:330px;height:380px;" ><span class="text-wrapper"><span class="name">Andrew Jackson</span><span class="title">Designer</span></span></a>
+
+    <a class="gallery-item" href="#"><img src="http://placeimg.com/330/265" alt="Headshot of John Tyler" style="width:330px;height:380px;" ><span class="text-wrapper"><span class="name">John Tyler</span><span class="title">Designer</span></span></a>
+
+    <a class="gallery-item" href="#"><img src="http://placeimg.com/330/265" alt="Headshot of James Polk" style="width:330px;height:380px;" ><span class="text-wrapper"><span class="name">James Polk</span><span class="title">Project Manager</span></span></a>
+
+    <a class="gallery-item" href="#"><img src="http://placeimg.com/330/265" alt="Headshot of Zachary Taylor" style="width:330px;height:380px;" ><span class="text-wrapper"><span class="name">Zachary Taylor</span><span class="title">Project Manager</span></span></a>
+
+  </div>
+
+</div>
+
+<style>
+    .pb-video-container {
+        padding-top: 20px;
+        background:#000000;
+        font-family: Lato;
+    }
+
+    .pb-video {
+        border: 1px solid #e6e6e6;
+        padding: 5px;
+    }
+
+        .pb-video:hover {
+            background: #2c3e50;
+        }
+
+    .pb-video-frame {
+        transition: width 2s, height 2s;
+    }
+
+        .pb-video-frame:hover {
+            height: 300px;
+        }
+
+    .pb-row {
+        margin-bottom: 10px;
+    }
+</style>
+
+<!-- Video Gallery - END -->
+
+</div>
+
+</body>
+<body class="site-content">
+		<header class="site-header">
+			<div class="container">
+				<a href="index.html" id="branding">
+
+				</a> <!-- #branding -->
+
+		</header>
+
+
+    <style>
+.neon {
+  color: #fff;
+  text-shadow:
+    0 0 5px #fff,
+    0 0 10px #fff,
+    0 0 20px #fff,
+    0 0 40px #0ff,
+    0 0 80px #0ff,
+    0 0 90px #0ff,
+    0 0 100px #0ff,
+    0 0 150px #0ff;
+}
+
+.blink {
+ animation: blinker 5s linear infinite;
+
+ font-size: 30px;
+ font-weight: bold;
+ font-family: sans-serif;
+ }
+ @keyframes blinker {
+ 50% { opacity: 0; }
+ }
+    </style>
+
+		<main>
+
+
+
+
+        <center class="neon blink"  style="font-size:20px;color:white;">ONLY THE VERY BEST</center>
+      <center class="neon blink"  style="font-size:50px;color:white;">Horror/Thriller/Action</center>
+
+			<div class="container">
+				<div class="page">
+					<div class="row">
+						<div class="column" style="width: 75%">
+
+						</div>
+						<div style="float: left; width: 25%; margin-left:0px; margin-right: 0px">
+							<div class="latest-movie" style="width: 100%">
+
+							</div>
+							<div class="latest-movie" style="width: 100%">
+
+							</div>
+						</div>
+					</div> <!-- .row -->
+					<div>
+
+
+
+						<div class="row">
+							<div class="movie">
+								<div class="wrapper" >
+                  <!--Just add video path to href>>>Use Margin to resize image-->
+
+
+									<a href="" ><img  style="margin-bottom:-5px;" src="dummy/wit.jpg" title="The Witch"></a>
+									<div class="rating">
+							            <div class="movie-score"><div></div></div>
+							            <p> &#9733; &#9733; &#9733; &#9733;</p>
+
+							        </div>
+
+						        </div>
+							</div>
+							<div class="movie">
+								<div class="wrapper">
+									<a href="single.html?#"><img style="margin-bottom:3px;" src="C:\Users\justin.ross\Desktop\good one\flix-movie-homepage-main\dummy\blood.jpg"></a> <!--Set Movie links href-->
+									<div class="rating">
+							            <div class="movie-score"><div></div></div>
+							            <p>  &#9733; &#9733; &#9733; &#9733;</p>
+							        </div>
+						    	</div>
+
+							</div>
+							<div class="movie">
+								<div class="wrapper">
+									<a href="single.html?#"><img style="margin-bottom:3px;"  src="C:\Users\justin.ross\Desktop\good one\flix-movie-homepage-main\dummy\army.jpg"></a>
+									<div class="rating">
+							            <div class="movie-score"><div></div></div>
+							            <p> &#9733; &#9733; &#9733; &#9733;</p>
+							        </div>
+						    	</div>
+							</div>
+							<div class="movie">
+								<div class="wrapper">
+									<a href="single.html?#"><img style="margin-bottom:3px;"  src="C:\Users\justin.ross\Desktop\good one\flix-movie-homepage-main\dummy\annihilation.jpg" ></a>
+									<div class="rating">
+							            <div class="movie-score"><div></div></div>
+							          <p> &#9733; &#9733; &#9733; &#9733;</p>
+							        </div>
+						        </div>
+							</div>
+							<div class="movie">
+								<div class="wrapper">
+									<a href="single.html?#"><img src="C:\Users\justin.ross\Desktop\good one\flix-movie-homepage-main\dummy\gretel.png"></a>
+									<div class="rating">
+							            <div class="movie-score"><div></div></div>
+							            <p> &#9733; &#9733; &#9733; &#9733;</p>
+							        </div>
+							    </div>
+							</div>
+						</div> <!-- .row -->
+					</div>
+          <div class="row">
+            <div class="movie">
+              <div class="wrapper">
+                <a href="single.html?#"><img src="C:\Users\justin.ross\Desktop\good one\flix-movie-homepage-main\dummy\la.jpg"></a>
+                <div class="rating">
+                        <div class="movie-score"><div></div></div>
+                      <p> &#9733; &#9733; &#9733; &#9733;</p>
+                    </div>
+                  </div>
+            </div>
+            <div class="movie">
+              <div class="wrapper">
+                <a href="single.html?#"><img style="margin-bottom:3px;"  src="C:\Users\justin.ross\Desktop\good one\flix-movie-homepage-main\dummy\invisible.jpg"></a> <!--Set Movie links href-->
+                <div class="rating">
+                        <div class="movie-score"><div></div></div>
+                        <p> &#9733; &#9733; &#9733; &#9733;</p>
+                    </div>
+                </div>
+
+            </div>
+            <div class="movie">
+              <div class="wrapper">
+                <a href="single.html?#"><img style="margin-bottom:18px;" src="C:\Users\justin.ross\Desktop\good one\flix-movie-homepage-main\dummy\craft.jpg"></a>
+                <div class="rating">
+                        <div class="movie-score"><div></div></div>
+                          <p> &#9733; &#9733; &#9733; &#9733;</p>
+                    </div>
+                </div>
+            </div>
+            <div class="movie">
+              <div class="wrapper">
+
+                <a href="single.html?#"><img style="margin-bottom:2px;" src="C:\Users\justin.ross\Desktop\good one\flix-movie-homepage-main\dummy\monster.png"></a>
+                <div class="rating">
+                        <div class="movie-score"><div></div></div>
+                        <p> &#9733; &#9733; &#9733; &#9733;</p>
+                    </div>
+                  </div>
+            </div>
+            <div class="movie">
+              <div class="wrapper">
+                <a href="single.html?#"><img style="margin-bottom:5px;"src="C:\Users\justin.ross\Desktop\good one\flix-movie-homepage-main\dummy\Dark.jpg"></a>
+                <div class="rating">
+                        <div class="movie-score"><div></div></div>
+                        <p> &#9733; &#9733; &#9733; &#9733;</p>
+                    </div>
+                </div>
+            </div>
+          </div> <!-- .row -->
+        </div>
+
+
+					<div>
+
+						<div class="row">
+							<div class="movie">
+								<div class="wrapper">
+									<a href="single.html?#"><img src="C:\Users\justin.ross\Desktop\good one\flix-movie-homepage-main\dummy\Replicas.jpg"></a>
+									<div class="rating">
+							            <div class="movie-score"><div></div></div>
+							            <p> &#9733; &#9733; &#9733; &#9733;</p>
+							        </div>
+							    </div>
+							</div>
+							<div class="movie">
+								<div class="wrapper">
+									<a href="single.html?#"><img style="margin-bottom:4px;" src="C:\Users\justin.ross\Desktop\good one\flix-movie-homepage-main\dummy\kong.jpg"></a>
+									<div class="rating">
+							            <div class="movie-score"><div></div></div>
+							            <p> &#9733; &#9733; &#9733; &#9733;</p>
+							        </div>
+							    </div>
+							</div>
+							<div class="movie">
+								<div class="wrapper">
+									<a href="single.html?#"><img style="margin-bottom:4px;" src="C:\Users\justin.ross\Desktop\good one\flix-movie-homepage-main\dummy\mortal.jpg"></a>
+									<div class="rating">
+							            <div class="movie-score"><div></div></div>
+							              <p> &#9733; &#9733; &#9733; &#9733;</p>
+							        </div>
+							    </div>
+							</div>
+							<div class="movie">
+								<div class="wrapper">
+									<a href="single.html?#"><img src="C:\Users\justin.ross\Desktop\good one\flix-movie-homepage-main\dummy\Americanwerewolf.jpg"></a>
+									<div class="rating">
+							            <div class="movie-score"><div></div></div>
+							             <p> &#9733; &#9733; &#9733; &#9733;</p>
+							        </div>
+							    </div>
+							</div>
+							<div class="movie">
+								<div class="wrapper">
+									<a href="single.html?#"><img style="margin-bottom:14px;"  src="C:\Users\justin.ross\Desktop\good one\flix-movie-homepage-main\dummy\Babadook.jpg"></a>
+									<div class="rating">
+							            <div class="movie-score"><div></div></div>
+							             <p> &#9733; &#9733; &#9733; &#9733;</p>
+							        </div>
+							    </div>
+							</div>
+						</div> <!-- .row -->
+					</div>
+
+          <div>
+
+            <div class="row">
+              <div class="movie">
+                <div class="wrapper">
+                  <a href="single.html?#"><img style="margin-bottom:4px;" src="C:\Users\justin.ross\Desktop\good one\flix-movie-homepage-main\dummy\CosmicSin.jpg"></a>
+                  <div class="rating">
+                          <div class="movie-score"><div></div></div>
+                          <p> &#9733; &#9733; &#9733; &#9733;</p>
+                      </div>
+                  </div>
+              </div>
+              <div class="movie">
+                <div class="wrapper">
+                  <a href="single.html?#"><img style="margin-bottom:4px;" src="C:\Users\justin.ross\Desktop\good one\flix-movie-homepage-main\dummy\DarkPhoenix.jpg"></a>
+                  <div class="rating">
+                          <div class="movie-score"><div></div></div>
+                          <p> &#9733; &#9733; &#9733; &#9733;</p>
+                      </div>
+                  </div>
+              </div>
+              <div class="movie">
+                <div class="wrapper">
+                  <a href="single.html?#"><img style="margin-bottom:16px;" src="C:\Users\justin.ross\Desktop\good one\flix-movie-homepage-main\dummy\darkskies.jpg"></a>
+                  <div class="rating">
+                          <div class="movie-score"><div></div></div>
+                            <p> &#9733; &#9733; &#9733; &#9733;</p>
+                      </div>
+                  </div>
+              </div>
+              <div class="movie">
+                <div class="wrapper">
+                  <a href="single.html?#"><img style="margin-bottom:8px;" src="C:\Users\justin.ross\Desktop\good one\flix-movie-homepage-main\dummy\Endless.jpg"></a>
+                  <div class="rating">
+                          <div class="movie-score"><div></div></div>
+                           <p> &#9733; &#9733; &#9733; &#9733;</p>
+                      </div>
+                  </div>
+              </div>
+              <div class="movie">
+                <div class="wrapper">
+                  <a href="single.html?#"><img style="margin-bottom:18px;"  src="C:\Users\justin.ross\Desktop\good one\flix-movie-homepage-main\dummy\eventhorizon.jpg"></a>
+                  <div class="rating">
+                          <div class="movie-score"><div></div></div>
+                           <p> &#9733; &#9733; &#9733; &#9733;</p>
+                      </div>
+                  </div>
+            </div> <!-- .row -->
+          </div>
+		</main>
+
+    <main>
+      <div class="container">
+        <div class="page">
+          <div class="row">
+            <div class="column" style="width: 75%">
+
+            </div>
+            <div style="float: left; width: 25%; margin-left:0px; margin-right: 0px">
+              <div class="latest-movie" style="width: 100%">
+
+              </div>
+              <div class="latest-movie" style="width: 100%">
+
+              </div>
+            </div>
+          </div> <!-- .row -->
+          <div>
+
+            <div class="row">
+              <div class="movie">
+                <div class="wrapper" >
+                  <!--Just add video path to href>>>Use Margin to resize image-->
+                  <a href=""><img  style="margin-bottom:-5px;" src="dummy/evil-dead.jpg"  ></a>
+                  <div class="rating">
+                          <div class="movie-score"><div></div></div>
+                          <p>  &#9733; &#9733; &#9733; &#9733;</p>
+
+                      </div>
+                    </div>
+              </div>
+              <div class="movie">
+                <div class="wrapper">
+                  <a href="single.html?#"><img style="margin-bottom:-2px;"  src="dummy/Girlweb.jpg"></a> <!--Set Movie links href-->
+                  <div class="rating">
+                          <div class="movie-score"><div></div></div>
+                          <p>  &#9733; &#9733; &#9733; &#9733;</p>
+                      </div>
+                  </div>
+
+              </div>
+              <div class="movie">
+                <div class="wrapper">
+                  <a href="single.html?#"><img style="margin-bottom:-1px;"  src="dummy/girlwithgifts.jpg"></a>
+                  <div class="rating">
+                          <div class="movie-score"><div></div></div>
+                          <p> &#9733; &#9733; &#9733; &#9733;</p>
+                      </div>
+                  </div>
+              </div>
+              <div class="movie">
+                <div class="wrapper">
+                  <a href="single.html?#"><img style="margin-bottom:13px;"  src="dummy/itcomesatnight.jpg"></a>
+                  <div class="rating">
+                          <div class="movie-score"><div></div></div>
+                        <p> &#9733; &#9733; &#9733; &#9733;</p>
+                      </div>
+                    </div>
+              </div>
+              <div class="movie">
+                <div class="wrapper">
+                  <a href="single.html?#"><img src="dummy/jennifersbody.jpg"></a>
+                  <div class="rating">
+                          <div class="movie-score"><div></div></div>
+                          <p> &#9733; &#9733; &#9733; &#9733;</p>
+                      </div>
+                  </div>
+              </div>
+            </div> <!-- .row -->
+          </div>
+          <div class="row">
+            <div class="movie">
+              <div class="wrapper">
+                <a href="single.html?#"><img src="dummy/lettherightonein.jpg"></a>
+                <div class="rating">
+                        <div class="movie-score"><div></div></div>
+                      <p> &#9733; &#9733; &#9733; &#9733;</p>
+                    </div>
+                  </div>
+            </div>
+            <div class="movie">
+              <div class="wrapper">
+                <a href="single.html?#"><img style="margin-bottom:28px;"  src="dummy/LightsOut.jpg"></a> <!--Set Movie links href-->
+                <div class="rating">
+                        <div class="movie-score"><div></div></div>
+                        <p> &#9733; &#9733; &#9733; &#9733;</p>
+                    </div>
+                </div>
+
+            </div>
+            <div class="movie">
+              <div class="wrapper">
+                <a href="single.html?#"><img style="margin-bottom:15px;" src="dummy/mirrors.jpg"></a>
+                <div class="rating">
+                        <div class="movie-score"><div></div></div>
+                          <p> &#9733; &#9733; &#9733; &#9733;</p>
+                    </div>
+                </div>
+            </div>
+            <div class="movie">
+              <div class="wrapper">
+
+                <a href="single.html?#"><img style="margin-bottom:25px;" src="dummy/mirror2.png"></a>
+                <div class="rating">
+                        <div class="movie-score"><div></div></div>
+                        <p> &#9733; &#9733; &#9733; &#9733;</p>
+                    </div>
+                  </div>
+            </div>
+            <div class="movie">
+              <div class="wrapper">
+                <a href="single.html?#"><img style="margin-bottom:20px;"src="dummy/moon.jpg"></a>
+                <div class="rating">
+                        <div class="movie-score"><div></div></div>
+                        <p> &#9733; &#9733; &#9733; &#9733;</p>
+                    </div>
+                </div>
+            </div>
+          </div> <!-- .row -->
+        </div>
+
+
+          <div>
+
+            <div class="row">
+              <div class="movie">
+                <div class="wrapper">
+                  <a href="single.html?#"><img style="margin-bottom:18px;" src="dummy/redridinghood.jpg"></a>
+                  <div class="rating">
+                          <div class="movie-score"><div></div></div>
+                          <p> &#9733; &#9733; &#9733; &#9733;</p>
+                      </div>
+                  </div>
+              </div>
+              <div class="movie">
+                <div class="wrapper">
+                  <a href="single.html?#"><img style="margin-bottom:4px;" src="dummy/ScapePlan.jpg"></a>
+                  <div class="rating">
+                          <div class="movie-score"><div></div></div>
+                          <p> &#9733; &#9733; &#9733; &#9733;</p>
+                      </div>
+                  </div>
+              </div>
+              <div class="movie">
+                <div class="wrapper">
+                  <a href="single.html?#"><img style="margin-bottom:4px;" src="dummy/Snyders.jpg"></a>
+                  <div class="rating">
+                          <div class="movie-score"><div></div></div>
+                            <p> &#9733; &#9733; &#9733; &#9733;</p>
+                      </div>
+                  </div>
+              </div>
+              <div class="movie">
+                <div class="wrapper">
+                  <a href="single.html?#"><img style="margin-bottom:4px;" src="dummy/thecovenant.jpg"></a>
+                  <div class="rating">
+                          <div class="movie-score"><div></div></div>
+                           <p> &#9733; &#9733; &#9733; &#9733;</p>
+                      </div>
+                  </div>
+              </div>
+              <div class="movie">
+                <div class="wrapper">
+                  <a href="single.html?#"><img style="margin-bottom:8px;"  src="dummy/thedevilshand.jpg"></a>
+                  <div class="rating">
+                          <div class="movie-score"><div></div></div>
+                           <p> &#9733; &#9733; &#9733; &#9733;</p>
+                      </div>
+                  </div>
+              </div>
+            </div> <!-- .row -->
+          </div>
+
+          <div>
+
+            <div class="row">
+              <div class="movie">
+                <div class="wrapper">
+                  <a href="single.html?#"><img src="dummy/Thing.jpg"></a>
+                  <div class="rating">
+                          <div class="movie-score"><div></div></div>
+                          <p> &#9733; &#9733; &#9733; &#9733;</p>
+                      </div>
+                  </div>
+              </div>
+              <div class="movie">
+                <div class="wrapper">
+                  <a href="single.html?#"><img style="margin-bottom:4px;" src="dummy/Zombieland.jpg"></a>
+                  <div class="rating">
+                          <div class="movie-score"><div></div></div>
+                          <p> &#9733; &#9733; &#9733; &#9733;</p>
+                      </div>
+                  </div>
+              </div>
+              <div class="movie">
+                <div class="wrapper">
+                  <a href="single.html?#"><img style="margin-bottom:8px;" src="dummy/engine.jpg"></a>
+                  <div class="rating">
+                          <div class="movie-score"><div></div></div>
+                            <p> &#9733; &#9733; &#9733; &#9733;</p>
+                      </div>
+                  </div>
+              </div>
+              <div class="movie">
+                <div class="wrapper">
+                  <a href="single.html?#"><img style="margin-bottom:4px;"  src="dummy/Wonder.jpg"></a>
+                  <div class="rating">
+                          <div class="movie-score"><div></div></div>
+                           <p> &#9733; &#9733; &#9733; &#9733;</p>
+                      </div>
+                  </div>
+              </div>
+              <div class="movie">
+                <div class="wrapper">
+                  <a href="single.html?#"><img style="margin-bottom:0px;"  src="dummy/sparrow.jpg"></a>
+                  <div class="rating">
+                          <div class="movie-score"><div></div></div>
+                           <p> &#9733; &#9733; &#9733; &#9733;</p>
+                      </div>
+                  </div>
+            </div> <!-- .row -->
+
+
+          </div>
+    </main>
+
+
+
+		<footer class="site-footer">
+
+
+      <section>
+
+      </section>
+
+
+
+      <style>
+      ul{
+      position: absolute;
+      top: 15%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      margin: 0;
+      padding: 0;
+      display: flex;
+
+      }
+      ul li{
+      list-style: none;
+      margin: 0 40px;
+
+      }
+      ul li .fa{
+      font-size: 40px;
+      color: #dd4b39;
+      line-height: 80px;
+      transition: .5s;
+
+      }
+      ul li a{
+      position: relative;
+      display: block;
+      width: 80px;
+      height: 80px;
+      background-color: #fff;
+      text-align: center;
+      transform: perspective(100px) rotate(-30deg) skew(25deg) translate(0,0);
+      transition: .5s;
+      box-shadow: -20px 20px 10px rgb(0, 0, 0, 0.5);
+      }
+      ul li a::before{
+      content: "";
+      position: absolute;
+      top: 10px;
+      left: -20px;
+      height: 100%;
+      width: 20px;
+      background: #b1b1b1;
+      transition: .5s;
+      transform: rotate(0deg) skewY(-45deg);
+      }
+      ul li a::after{
+      content: "";
+      position: absolute;
+      top: 80px;
+      left: -11px;
+      height: 20px;
+      width: 100%;
+      background: #b1b1b1;
+      transition: .5s;
+      transform: rotate(0deg) skewX(-45deg);
+      }
+      ul li a:hover{
+      transform: perspective(1000px) rotate(-30deg) skew(25deg) translate(20px, -20px);
+      box-shadow: -50px 50px 50px rgb(0, 0, 0, 0.5);
+      }
+      ul li:hover .fa{
+      color: #fff;
+      }
+      ul li a:hover{
+      transform: perspective(1000px) rotate(-30deg) skew(25deg) translate(20px, -20px);
+      box-shadow: -50px 50px 50px rgb(0, 0, 0, 0.5);
+      }
+      ul li:hover:nth-child(1) a{
+      background: #B90000;
+      }
+
+      ul li:hover:nth-child(1) a:before{
+      background: #C84A00;
+      }
+      ul li:hover:nth-child(1) a:after{
+      background: #AD694A;
+      }
+      ul li:hover:nth-child(2) a{
+      background: #55EE55;
+      }
+      ul li:hover:nth-child(2) a:before{
+      background: #41B75F;
+      }
+      ul li:hover:nth-child(2) a:after{
+      background: #4DDE64;
+      }
+      ul li:hover:nth-child(3) a{
+      background: #1C1C1C;
+      }
+
+      ul li:hover:nth-child(3) a:before{
+      background: #050505;
+      }
+      ul li:hover:nth-child(3) a:after{
+      background: #000005;
+      }
+
+      ul li:hover:nth-child(4) a{
+      background: #0077B5;
+      }
+
+      ul li:hover:nth-child(4) a:before{
+      background: #036aa0;
+      }
+      ul li:hover:nth-child(4) a:after{
+      background: #0d82bf;
+      }
+
+      ul li:hover:nth-child(5) a{
+      background: linear-gradient(#400080, transparent), linear-gradient(200deg, #d047d1, #ff0000, #ffff00);
+      }
+
+      ul li:hover:nth-child(5) a:before{
+      background: linear-gradient(#400080, transparent), linear-gradient(200deg, #d047d1, #ff0000, #ffff00);
+      }
+      ul li:hover:nth-child(5) a:after{
+      background: linear-gradient(#400080, transparent), linear-gradient(200deg, #d047d1, #ff0000, #ffff00);
+      }
+      </style>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+		</footer>
+
+
+
+
+	</body>
+</html>
